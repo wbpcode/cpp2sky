@@ -10,6 +10,7 @@ def cpp2sky_dependencies():
     com_github_fmtlib_fmt()
     com_google_abseil()
     com_github_gabime_spdlog()
+    bazel_features()
     hedron_compile_commands()
 
 def skywalking_data_collect_protocol():
@@ -25,35 +26,35 @@ def skywalking_data_collect_protocol():
 def com_github_grpc_grpc():
     http_archive(
         name = "com_github_grpc_grpc",
-        sha256 = "1ccc2056b68b81ada8df61310e03dfa0541c34821fd711654d0590a7321db9c8",
-        urls = ["https://github.com/grpc/grpc/archive/a3ae8e00a2c5553c806e83fae83e33f0198913f0.tar.gz"],
-        strip_prefix = "grpc-a3ae8e00a2c5553c806e83fae83e33f0198913f0",
+        sha256 = "c9f9ae6e4d6f40464ee9958be4068087881ed6aa37e30d0e64d40ed7be39dd01",
+        urls = ["https://github.com/grpc/grpc/archive/v1.62.1.tar.gz"],
+        strip_prefix = "grpc-1.62.1",
     )
 
 def rules_proto():
     http_archive(
         name = "rules_proto",
-        sha256 = "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
-        strip_prefix = "rules_proto-4.0.0",
+        sha256 = "6fb6767d1bef535310547e03247f7518b03487740c11b6c6adb7952033fe1295",
+        strip_prefix = "rules_proto-6.0.2",
         urls = [
-            "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
+            "https://github.com/bazelbuild/rules_proto/archive/refs/tags/6.0.2.tar.gz",
         ],
     )
 
 def com_google_googletest():
     http_archive(
         name = "com_google_googletest",
-        sha256 = "7897bfaa5ad39a479177cfb5c3ce010184dbaee22a7c3727b212282871918751",
-        strip_prefix = "googletest-a4ab0abb93620ce26efad9de9296b73b16e88588",
-        urls = ["https://github.com/google/googletest/archive/a4ab0abb93620ce26efad9de9296b73b16e88588.tar.gz"],
+        sha256 = "7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926",
+        strip_prefix = "googletest-1.15.2",
+        urls = ["https://github.com/google/googletest/archive/v1.15.2.tar.gz"],
     )
 
 def com_google_protobuf():
     http_archive(
         name = "com_google_protobuf",
-        sha256 = "89ac31a93832e204db6d73b1e80f39f142d5747b290f17340adce5be5b122f94",
-        strip_prefix = "protobuf-3.19.4",
-        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v3.19.4/protobuf-cpp-3.19.4.tar.gz"],
+        sha256 = "4fc5ff1b2c339fb86cd3a25f0b5311478ab081e65ad258c6789359cd84d421f8",
+        strip_prefix = "protobuf-26.1",
+        urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protobuf-26.1.tar.gz"],
     )
 
 def com_github_httplib():
@@ -86,9 +87,17 @@ def com_github_gabime_spdlog():
 def com_google_abseil():
     http_archive(
         name = "com_google_absl",
-        sha256 = "5ca73792af71ab962ee81cdf575f79480704b8fb87e16ca8f1dc1e9b6822611e",
-        strip_prefix = "abseil-cpp-6f43f5bb398b6685575b36874e36cf1695734df1",
-        urls = ["https://github.com/abseil/abseil-cpp/archive/6f43f5bb398b6685575b36874e36cf1695734df1.tar.gz"],
+        sha256 = "987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed",
+        strip_prefix = "abseil-cpp-20230802.1",
+        urls = ["https://github.com/abseil/abseil-cpp/archive/v20230802.1.tar.gz"],
+    )
+
+def bazel_features():
+    http_archive(
+        name = "bazel_features",
+        sha256 = "5ac743bf5f05d88e84962e978811f2524df09602b789c92cf7ae2111ecdeda94",
+        urls = ["https://github.com/bazel-contrib/bazel_features/releases/download/v1.14.0/bazel_features-v1.14.0.tar.gz"],
+        strip_prefix = "bazel_features-1.14.0",
     )
 
 def hedron_compile_commands():
